@@ -75,7 +75,7 @@ if [ -z ${BUILD_ROOT} ] ; then
 fi
 
 # Assume location of MOM6-examples if not provided:
-if [ -z ${MOM6EXAMPLES_DIR} ] ; then
+if [ -z ${MOM6_DIR} ] ; then
    export MOM6_DIR=${SHiELD_SRC}/MOM6-examples/src/MOM6
 fi
 
