@@ -79,6 +79,11 @@ if [ -z ${MOM6_DIR} ] ; then
    export MOM6_DIR=${SHiELD_SRC}/MOM6-examples/src/MOM6
 fi
 
+# Assume location of ocean BGC main directory if not provided:
+if [ -z ${BGC_DIR} ] ; then
+   export BGC_DIR=${SHiELD_SRC}/ocean_BGC
+fi
+
 mkdir -p ${BUILD_ROOT}/Build/mom6
 list_paths -l -o ${BUILD_ROOT}/Build/mom6/pathnames_mom6 \
     ${MOM6_DIR}/config_src/memory/dynamic_nonsymmetric \
