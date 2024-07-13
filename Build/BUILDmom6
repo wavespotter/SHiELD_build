@@ -102,17 +102,18 @@ mkmf -m Makefile \
      -o "-I${NCEP_DIR}/libFMS/${COMPILER}/${BIT} -I${SHiELD_SRC}/FMS/axis_utils/include -I${SHiELD_SRC}/FMS/diag_manager/include -I${SHiELD_SRC}/FMS/fms/include -I${SHiELD_SRC}/FMS/fms2_io/include -I${SHiELD_SRC}/FMS/horiz_interp/include -I${SHiELD_SRC}/FMS/include -I${SHiELD_SRC}/FMS/mpp/include -I${SHiELD_SRC}/FMS/sat_vapor_pres/include -I${SHiELD_SRC}/FMS/string_utils/include -I${SHiELD_SRC}/FMS/test_fms/fms/include -I${MOM6_DIR}/pkg/CVMix-src/include -I${MOM6_DIR}/src/framework" \
      ${BUILD_ROOT}/Build/mom6/pathnames_mom6
 
-make -j8 REPRO=Y OPENMP=Y AVX=Y NETCDF=3 Makefile libmom6.a >& Build_mom6.out
+make -j8 REPRO=Y OPENMP=Y AVX=Y NETCDF=3 Makefile libmom6.a >& Build_mom6.out || cat Build_mom6.out
 
 ################
-#will get noise with openmp in debugmode
+# will get noise with openmp in debugmode
 ################
 
-# test and report on libFMS build success
-if [ $? -ne 0 ] ; then
-  echo ">>> ${BUILD_ROOT}/Build/mom6 build failed"
-  exit 1
+# test and report on MOM6 build success
+if [ ! -f ${BUILD_ROOT}/Build/mom6/libmom6.a ] ; then
+    echo ">>> ${BUILD_ROOT}/Build/mom6 build failed"
+    exit 1
+else
+    echo " libmom6 build successful"
 fi
-echo " libmom6 build successful"
 
 popd
