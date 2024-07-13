@@ -86,6 +86,7 @@ fi
 
 mkdir -p ${BUILD_ROOT}/Build/mom6
 list_paths -l -o ${BUILD_ROOT}/Build/mom6/pathnames_mom6 \
+    ${MOM6_DIR}/config_src/drivers/nuopc_cap \
     ${MOM6_DIR}/config_src/memory/dynamic_nonsymmetric \
     ${MOM6_DIR}/src/*/ \
     ${MOM6_DIR}/src/*/*/ \
