@@ -95,7 +95,8 @@ list_paths -l -o ${BUILD_ROOT}/Build/mom6/pathnames_mom6 \
     ${MOM6_DIR}/config_src/external/drifters \
     ${MOM6_DIR}/config_src/external/stochastic_physics \
     ${MOM6_DIR}/config_src/infra/FMS2 \
-    ${MOM6_DIR}/pkg/GSW-Fortran/*/ \
+    ${MOM6_DIR}/pkg/GSW-Fortran/modules \
+    ${MOM6_DIR}/pkg/GSW-Fortran/toolbox \
     ${MOM6_DIR}/config_src/external/ODA_hooks \
     ${MOM6_DIR}/config_src/external/database_comms \
     ${MOM6_DIR}/config_src/external/drifters \
