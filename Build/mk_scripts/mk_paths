@@ -77,8 +77,7 @@ elif [ ${CONFIG} = 'shield' ] ; then
       GFDL_atmos_cubed_sphere/model/cld_eff_rad.F90 \
       SHiELD_physics/gsmphys/  \
       SHiELD_physics/GFS_layer/ \
-      SHiELD_physics/IPD_layer/ \
-      GFDL_atmos_cubed_sphere/driver/NUOPC
+      SHiELD_physics/IPD_layer/
 
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_fv3 \
       SHiELD_physics/FV3GFS/ \
@@ -86,7 +85,8 @@ elif [ ${CONFIG} = 'shield' ] ; then
       GFDL_atmos_cubed_sphere/driver/SHiELD/atmosphere.F90 \
       GFDL_atmos_cubed_sphere/tools/ \
       GFDL_atmos_cubed_sphere/model/ \
-      GFDL_atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90
+      GFDL_atmos_cubed_sphere/GFDL_tools/fv_diag_column.F90 \
+      GFDL_atmos_cubed_sphere/driver/NUOPC
 
   list_paths -o ${BUILD_ROOT}/Build/exec/${CONFIG}_${HYDRO}.${COMP}.${BIT}.${COMPILER}/pathnames_driver \
       FMSCoupler/SHiELD/coupler_main.F90
